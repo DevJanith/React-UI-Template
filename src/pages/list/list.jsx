@@ -9,7 +9,9 @@ const list = () => {
       <Sidebar />
       <div className="listContainer">
         <Navbar />
-        <Datatable />
+        <div className="datatable">
+          <Datatable />
+        </div>
       </div>
     </div>
   );
