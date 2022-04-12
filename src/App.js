@@ -3,15 +3,21 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/list";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
+import UnderContraction from "./pages/underContraction/UnderContraction";
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+import "./style/dark.scss";
+import { DarkModeContext } from "./context/darkModeContext";
+import { useContext } from "react";
 
 function App() {
+
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className="App">
+    <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
         <Routes>
           <Route path="/" >
@@ -27,6 +33,19 @@ function App() {
               <Route path=":productId" element={<Single />} />
               <Route path="new" element={<New />} />
             </Route>
+            <Route path="orders" >
+              <Route index element={<List />} />
+              <Route path=":ordersId" element={<Single />} />
+              <Route path="new" element={<New />} />
+            </Route>
+            <Route path="delivery" >
+              <Route index element={<List />} />
+              <Route path=":deliveryId" element={<Single />} />
+              <Route path="new" element={<New />} />
+            </Route>
+          </Route>
+          <Route path="/under-construction*" >
+            <Route index element={<UnderContraction />} />
           </Route>
         </Routes>
       </BrowserRouter>
