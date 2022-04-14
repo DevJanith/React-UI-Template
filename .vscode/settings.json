@@ -3,6 +3,7 @@
         "datagrid",
         "Datatable",
         "datatatablesource",
+        "formik",
         "harde",
         "setdark"
     ]
