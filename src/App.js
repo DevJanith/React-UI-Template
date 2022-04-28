@@ -1,18 +1,16 @@
-import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
-import List from "./pages/list/list";
-import Single from "./pages/single/Single";
-import New from "./pages/new/New";
-import UnderContraction from "./pages/underContraction/UnderContraction";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import "./style/dark.scss";
-import { DarkModeContext } from "./context/darkModeContext";
 import { useContext } from "react";
+import {
+  BrowserRouter, Route, Routes
+} from "react-router-dom";
+import { DarkModeContext } from "./context/darkModeContext";
 import { userInput } from "./formSource";
+import Home from "./pages/home/Home";
+import List from "./pages/list/list";
+import Login from "./pages/login/Login";
+import New from "./pages/new/New";
+import Single from "./pages/single/Single";
+import UnderContraction from "./pages/underContraction/UnderContraction";
+import "./style/dark.scss";
 
 function App() {
 
